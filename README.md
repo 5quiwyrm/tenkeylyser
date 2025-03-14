@@ -1,36 +1,27 @@
 # tenkeylyser
 
-FIXME: description
+Keyboard analyser for tenkey layouts.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Not yet ready for installation.
 
 ## Usage
 
-FIXME: explanation
-
-    $ java -jar tenkeylyser-0.1.0-standalone.jar [args]
+There will be two versions of this, one to be used in the clojure/leiningen REPL, another to be used as a standalone tool.
+The REPL version will be prioritised for now.
 
 ## Options
 
-FIXME: listing of options this app accepts.
+There aren't any options for now.
 
 ## Examples
 
 ...
 
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
 ## License
 
-Copyright © 2025 FIXME
+Copyright © 2025 5quidwyrm
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
