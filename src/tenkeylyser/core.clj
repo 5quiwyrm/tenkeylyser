@@ -13,7 +13,3 @@
         hms (cs/calchmscore ex/hyper d)]
     (println "Heat map score:" hms)))
 
-; (defn -main
-;   "I don't do a whole lot ... yet."
-;   [& args]
-;   (println "Hello, World!"))
