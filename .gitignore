@@ -14,3 +14,7 @@ pom.xml.asc
 corpora/
 data/
 layouts/
+.clj-kondo/
+.lsp/
+.lein-repl-history
+.nrepl-port
