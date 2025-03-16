@@ -9,7 +9,8 @@
 (defn -main
   "MAIN FUNCTION"
   [& args]
-  (let [d (gd/readdata "e200")
+  (let [d (rw/readdata "e200")
         hms (cs/calchmscore ex/hyper d)]
-    (println "Heat map score:" hms)))
+    (println "Heat map score:" hms)
+    (println "Distance score:" (cs/totaldist ex/hyper d))))
 
