@@ -13,6 +13,13 @@
       ((layout :right) character))
     ((layout :left) character)))
 
+(defn gethand [character layout]
+  (if (nil? ((layout :left) character))
+    (if (nil? ((layout :right) character))
+      nil
+      :left)
+    :right))
+
 (defn hmscore [character layout]
   (let [hm {[-2 1]  5.0 [-1 1]  4.0 [0 1]  3.0
             [-2 0]  3.0 [-1 0]  2.0 [0 0]  1.0
@@ -30,6 +37,9 @@
 
 (defn bigramdist [bigram layout]
   (assert (= 2 (count bigram)))
+  (when (not=
+         (gethand (first bigram) layout)
+         (gethand (second bigram) layout)) 0)
   (let [loc1 (getloc (first bigram) layout)
         loc2 (getloc (second bigram) layout)
         locs (apply conj loc1 (for [i loc2] i))]
