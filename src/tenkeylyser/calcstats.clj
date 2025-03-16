@@ -17,8 +17,8 @@
   (if (nil? ((layout :left) character))
     (if (nil? ((layout :right) character))
       nil
-      :left)
-    :right))
+      :right)
+    :left))
 
 (defn hmscore [character layout]
   (let [hm {[-2 1]  5.0 [-1 1]  4.0 [0 1]  3.0
@@ -32,28 +32,29 @@
   (assert (not (nil? (data :monograms))))
   (let [monograms (data :monograms)]
     (reduce +
-            (for [i (keys monograms) f (vals monograms)]
-              (* (hmscore (first i) viewlayout) f)))))
+            (for [i monograms]
+              (* (hmscore (first (first i)) viewlayout) (second i))))))
 
 (defn bigramdist [bigram layout]
   (assert (= 2 (count bigram)))
-  (when (not=
-         (gethand (first bigram) layout)
-         (gethand (second bigram) layout)) 0)
-  (let [loc1 (getloc (first bigram) layout)
-        loc2 (getloc (second bigram) layout)
-        locs (apply conj loc1 (for [i loc2] i))]
-    (reduce + (for [i (range (dec (count locs)))]
-                (let [curr (nth locs i)
-                      next (nth locs (inc i))
-                      sq (fn [x] (* x x))
-                      diffx (sq (- (nth curr 0) (nth next 0)))
-                      diffy (sq (- (nth curr 1) (nth next 1)))]
-                  (Math/sqrt (+ diffx diffy)))))))
+  (if (not=
+       (gethand (first bigram) layout)
+       (gethand (second bigram) layout))
+    0
+    (let [loc1 (getloc (first bigram) layout)
+          loc2 (getloc (second bigram) layout)
+          locs (apply conj loc1 (for [i loc2] i))]
+      (reduce + (for [i (range (dec (count locs)))]
+                  (let [curr (nth locs i)
+                        next (nth locs (inc i))
+                        sq (fn [x] (* x x))
+                        diffx (sq (- (nth curr 0) (nth next 0)))
+                        diffy (sq (- (nth curr 1) (nth next 1)))]
+                    (Math/sqrt (+ diffx diffy))))))))
 
 (defn totaldist [viewlayout data]
   (assert (not (nil? (data :bigrams))))
   (let [bigrams (data :bigrams)]
     (reduce +
-            (for [i (keys bigrams) f (vals bigrams)]
-              (* (bigramdist i viewlayout) f)))))
+            (for [i bigrams]
+              (* (bigramdist (first i) viewlayout) (second i))))))
