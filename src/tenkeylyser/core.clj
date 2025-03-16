@@ -15,6 +15,5 @@
     (println "Total heat map score:" thms)
     (println "Average heat map score:" (/ thms (d :count)))
     (println "Total distance score:" tdst)
-    (println "Average distance score:" (/ tdst (dec (d :count))))
-    ))
+    (println "Average distance score:" (/ tdst (dec (d :count))))))
 
