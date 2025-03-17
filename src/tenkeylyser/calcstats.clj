@@ -58,3 +58,18 @@
     (reduce +
             (for [i bigrams]
               (* (bigramdist (first i) viewlayout) (second i))))))
+
+(defn alt? [bigram layout]
+  (assert (= 2 (count bigram)))
+  (if (not=
+        (gethand (first bigram) layout)
+        (gethand (second bigram) layout))
+      1
+      0))
+
+(defn totalalt [viewlayout data]
+  (assert (not (nil? (data :bigrams))))
+  (let [bigrams (data :bigrams)]
+    (reduce +
+            (for [i bigrams]
+              (* (alt? (first i) viewlayout) (second i))))))
