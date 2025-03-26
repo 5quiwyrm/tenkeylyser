@@ -90,3 +90,18 @@
     (reduce +
             (for [i bigrams]
               (* (swipetap? (first i) viewlayout) (second i))))))
+
+(defn repswipe? [bigram layout]
+  (assert (= 2 (count bigram)))
+  (if (and
+       (= (first bigram) (second bigram))
+       (> (-> bigram (first) (getloc layout) (count)) 1))
+    1
+    0))
+
+(defn totalrepswipe [viewlayout data]
+  (assert (not (nil? (data :bigrams))))
+  (let [bigrams (data :bigrams)]
+    (reduce +
+            (for [i bigrams]
+              (* (repswipe? (first i) viewlayout) (second i))))))
