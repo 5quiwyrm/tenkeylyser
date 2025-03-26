@@ -10,7 +10,7 @@
   "MAIN FUNCTION"
   [& args]
   (let [d (rw/readdata "e200")
-        thms (cs/calchmscore ex/hyper d)
+        thms (cs/totalhmscore ex/hyper d)
         tdst (cs/totaldist ex/hyper d)
         talt (cs/totalalt ex/hyper d)]
     (println "Total heat map score:" thms)

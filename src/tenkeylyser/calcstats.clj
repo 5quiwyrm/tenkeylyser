@@ -28,7 +28,7 @@
     (reduce +
             (for [l locs] (hm l)))))
 
-(defn calchmscore [viewlayout data]
+(defn totalhmscore [viewlayout data]
   (assert (not (nil? (data :monograms))))
   (let [monograms (data :monograms)]
     (reduce +
