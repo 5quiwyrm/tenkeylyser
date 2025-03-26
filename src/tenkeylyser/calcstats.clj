@@ -62,10 +62,10 @@
 (defn alt? [bigram layout]
   (assert (= 2 (count bigram)))
   (if (not=
-        (gethand (first bigram) layout)
-        (gethand (second bigram) layout))
-      1
-      0))
+       (gethand (first  bigram) layout)
+       (gethand (second bigram) layout))
+    1
+    0))
 
 (defn totalalt [viewlayout data]
   (assert (not (nil? (data :bigrams))))
@@ -73,3 +73,20 @@
     (reduce +
             (for [i bigrams]
               (* (alt? (first i) viewlayout) (second i))))))
+
+(defn swipetap? [bigram layout]
+  (assert (= 2 (count bigram)))
+  (if (and
+       (=
+        (last  (getloc (first bigram)  layout))
+        (first (getloc (second bigram) layout)))
+       (not= (first bigram) (second bigram)))
+    1
+    0))
+
+(defn totalswipetap [viewlayout data]
+  (assert (not (nil? (data :bigrams))))
+  (let [bigrams (data :bigrams)]
+    (reduce +
+            (for [i bigrams]
+              (* (swipetap? (first i) viewlayout) (second i))))))
