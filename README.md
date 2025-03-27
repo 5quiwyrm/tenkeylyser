@@ -1,4 +1,4 @@
-# tenkeylyser
+# Tenkeylyser
 
 Keyboard analyser for tenkey layouts.
 
