@@ -6,8 +6,14 @@
   "Prints a tenkey layout."
   [viewlayout]
   {:name  (viewlayout :name)
-   :left  (into {} (map (fn [[key value]] (assoc {} key (into {} value))) (group-by #(first (second %)) (viewlayout :left))))
-   :right (into {} (map (fn [[key value]] (assoc {} key (into {} value))) (group-by #(first (second %)) (viewlayout :right))))})
+   :left  (->> (viewlayout :left)
+               (group-by #(first (second %)))
+               (map (fn [[key value]] (assoc {} key (into {} value))))
+               (into {}))
+   :right (->> (viewlayout :right)
+               (group-by #(first (second %)))
+               (map (fn [[key value]] (assoc {} key (into {} value))))
+               (into {}))})
 
 (defn printstats
   "Prints the stats of a given layout on a given corpus."
