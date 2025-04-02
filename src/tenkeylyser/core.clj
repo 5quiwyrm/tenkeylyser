@@ -6,12 +6,12 @@
    [tenkeylyser.readwrite :as rw]
    [tenkeylyser.calcstats :as cs]
    [tenkeylyser.output :as op]
-   [clojure.tools.namespace.repl :only (refresh)]))
+   [clojure.tools.namespace.repl :as rpl]))
 
-(defn rl [] (clojure.tools.namespace.repl/refresh))
+(defn rl [] (rpl/refresh))
 
 (defn -main
   "MAIN FUNCTION"
   [& args]
-  (op/printstats ex/hyper (rw/readdata "e200")))
+  (op/printlayout ex/hyper (rw/readdata "e200")))
 
