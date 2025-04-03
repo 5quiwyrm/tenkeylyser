@@ -35,6 +35,15 @@
             (for [i monograms]
               (* (hmscore (first (first i)) viewlayout) (second i))))))
 
+(defn subvect [v0 v1]
+  (if (or (nil? v0) (nil? v1))
+    nil
+    (map - v1 v0)))
+
+(defn magnvect [v]
+  (Math/sqrt (reduce +
+                     (map #(* % %) v))))
+
 (defn bigramdist [bigram layout]
   (assert (= 2 (count bigram)))
   (if (not=
@@ -46,11 +55,8 @@
           locs (apply conj loc1 (for [i loc2] i))]
       (reduce + (for [i (range (dec (count locs)))]
                   (let [curr (nth locs i)
-                        next (nth locs (inc i))
-                        sq (fn [x] (* x x))
-                        diffx (sq (- (nth curr 0) (nth next 0)))
-                        diffy (sq (- (nth curr 1) (nth next 1)))]
-                    (Math/sqrt (+ diffx diffy))))))))
+                        next (nth locs (inc i))]
+                    (magnvect (subvect curr next))))))))
 
 (defn totaldist [viewlayout data]
   (assert (not (nil? (data :bigrams))))
