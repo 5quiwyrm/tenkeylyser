@@ -13,5 +13,5 @@
 (defn -main
   "MAIN FUNCTION"
   [& args]
-  (op/printlayout ex/hyper (rw/readdata "e200")))
+  (op/printlayout (rw/readlayout "hyper") (rw/readdata "e200")))
 

@@ -1,4 +1,7 @@
-(ns tenkeylyser.readwrite)
+(ns tenkeylyser.readwrite
+  (:require
+    [clojure.pprint :as pp]
+    [clojure.java.io :as io]))
 
 (def layoutfileext ".akl")
 
@@ -6,7 +9,7 @@
   (->> name (#(str "./layouts/" % layoutfileext)) (slurp) (read-string)))
 
 (defn writelayout [layout]
-  (->> layout (str) (spit (str "./layouts/" (layout :name) layoutfileext))))
+  (pp/pprint layout (io/writer (str "./layouts/" (layout :name) layoutfileext))))
 
 (defn writedata
   ; This takes in a map of ngram data, and writes it to a file
@@ -14,7 +17,7 @@
   [data]
   (assert (not (nil? (data :name))))
   (let [filename (str "./data/" (data :name) ".ngram")]
-    (->> data (str) (spit filename))))
+    (pp/pprint data (io/writer filename))))
 
 (defn readdata
   ; This takes a file name and looks for a file in the data directory.
