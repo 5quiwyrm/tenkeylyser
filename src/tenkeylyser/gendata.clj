@@ -20,5 +20,5 @@
      :count     (count contents)
      :monograms (ngrams 1)
      :bigrams   (ngrams 2)
-     :trigrams   (ngrams 3)}))
+     :trigrams  (ngrams 3)}))
 
