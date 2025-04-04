@@ -1,11 +1,13 @@
 (ns tenkeylyser.core
   (:gen-class)
   (:require
-   [tenkeylyser.gendata :as gd]
-   [tenkeylyser.examples :as ex]
-   [tenkeylyser.readwrite :as rw]
    [tenkeylyser.calcstats :as cs]
+   [tenkeylyser.customise :as cu]
+   [tenkeylyser.examples :as ex]
+   [tenkeylyser.gendata :as gd]
+   [tenkeylyser.layouttools :as lt]
    [tenkeylyser.output :as op]
+   [tenkeylyser.readwrite :as rw]
    [clojure.tools.namespace.repl :as rpl]))
 
 (defn rl [] (rpl/refresh))
