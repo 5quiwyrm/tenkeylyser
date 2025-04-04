@@ -15,7 +15,7 @@
 (defn -main
   "MAIN FUNCTION"
   [& args]
-  (if (> 2 (count args))
+  (if (> 1 (count args))
     (let [layoutname (first args)
           corpusname (second args)
           layout (rw/readlayout layoutname)
