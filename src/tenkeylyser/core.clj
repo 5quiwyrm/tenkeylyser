@@ -15,5 +15,11 @@
 (defn -main
   "MAIN FUNCTION"
   [& args]
-  (op/printlayout (rw/readlayout "hyper") (rw/readdata "e200")))
+  (if (> 2 (count args))
+    (let [layoutname (first args)
+          corpusname (second args)
+          layout (rw/readlayout layoutname)
+          corpus (rw/readdata corpusname)]
+      (op/printlayoutstats layout corpus))
+    (throw (Exception. "Please provide a layout and a corpus!"))))
 
