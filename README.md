@@ -17,6 +17,8 @@ The CLI tool gives you less control but can do the basic things like:
 
 and the REPL version will give you full control on the tool.
 
+For more documentation read files in `doc`.
+
 ## License
 
 Copyright © 2025 5quidwyrm
