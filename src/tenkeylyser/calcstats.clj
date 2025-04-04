@@ -1,6 +1,7 @@
 (ns tenkeylyser.calcstats
   (:require
-    [tenkeylyser.layoutools :as lt]))
+    [tenkeylyser.layoutools :as lt]
+    [tenkeylyser.customise :as cu]))
 
 ; Each layout will be defined as a map with entries :left and :right for each hand.
 ; Each entry in the maps will take the form of <character, map>
@@ -9,9 +10,7 @@
 ; The heat map will be a function that takes in a vector of coordinates and spits out the heatmap score.
 
 (defn hmscore [character layout]
-  (let [hm {[-2 1]  5.0 [-1 1]  4.0 [0 1]  3.0
-            [-2 0]  3.0 [-1 0]  2.0 [0 0]  1.0
-            [-2 -1] 4.0 [-1 -1] 3.0 [0 -1] 2.0}
+  (let [hm cu/heatmap
         locs (lt/getloc character layout)]
     (reduce +
             (for [l locs] (hm l)))))
