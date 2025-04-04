@@ -8,7 +8,7 @@
     (pp/pprint x)
     x))
 
-(defn printlayout
+(defn printlayoutstats
   "Prints a tenkey layout."
   [viewlayout data]
   (let [name (viewlayout :name)
