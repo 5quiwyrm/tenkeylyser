@@ -5,7 +5,7 @@
    [tenkeylyser.customise :as cu]
    [tenkeylyser.examples :as ex]
    [tenkeylyser.gendata :as gd]
-   [tenkeylyser.layouttools :as lt]
+   [tenkeylyser.layoutools :as lt]
    [tenkeylyser.output :as op]
    [tenkeylyser.readwrite :as rw]
    [clojure.tools.namespace.repl :as rpl]))
