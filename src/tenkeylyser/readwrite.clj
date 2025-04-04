@@ -17,7 +17,7 @@
   [data]
   (assert (not (nil? (data :name))))
   (let [filename (str "./data/" (data :name) ".ngram")]
-    (pp/pprint data (io/writer filename))))
+    (->> data (str) (spit filename))))
 
 (defn readdata
   ; This takes a file name and looks for a file in the data directory.
