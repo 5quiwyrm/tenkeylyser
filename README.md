@@ -8,16 +8,14 @@ Not yet ready for installation.
 
 ## Usage
 
-There will be two versions of this, one to be used in the clojure/leiningen REPL, another to be used as a standalone tool.
-The REPL version will be prioritised for now.
+This tool will be usable in the REPL or as a CLI tool.
+The REPL version will be for people willing to read documentation and use Clojure.
 
-## Options
+The CLI tool gives you less control but can do the basic things like:
+- Generating data for corpora
+- Calculating layouts' stats
 
-There aren't any options for now.
-
-## Examples
-
-...
+and the REPL version will give you full control on the tool.
 
 ## License
 
