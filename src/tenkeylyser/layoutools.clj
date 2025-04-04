@@ -14,10 +14,3 @@
       :right)
     :left))
 
-(defn updatename [layout newname]
-  {:name newname
-   :left (layout :left)
-   :right (layout :right)})
-
-(defn swapletters [layout c0 c1]
-  (let []))
