@@ -8,6 +8,10 @@ Not yet ready for installation.
 
 ## Usage
 
+Requirements:
+- CLI version -> JVM installed
+- REPL version -> Leiningen installed
+
 This tool will be usable in the REPL or as a CLI tool.
 The REPL version will be for people willing to read documentation and use Clojure.
 
