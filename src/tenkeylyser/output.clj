@@ -79,9 +79,9 @@
                 (ccoerce (leftin [-2 1])) (ccoerce (lefthome [-2 1])) (ccoerce (leftout [-2 1]))
                 (ccoerce (leftin [-1 1])) (ccoerce (lefthome [-1 1])) (ccoerce (leftout [-1 1]))
                 (ccoerce (leftin [0  1])) (ccoerce (lefthome [0  1])) (ccoerce (leftout [0  1]))
-                (ccoerce (rightin [0  1])) (ccoerce (righthome [0  1])) (ccoerce (rightout [0  1]))
-                (ccoerce (rightin [-1 1])) (ccoerce (righthome [-1 1])) (ccoerce (rightout [-1 1]))
-                (ccoerce (rightin [-2 1])) (ccoerce (righthome [-2 1])) (ccoerce (rightout [-2 1]))
+                (ccoerce (rightout [0  1])) (ccoerce (righthome [0  1])) (ccoerce (rightin [0  1]))
+                (ccoerce (rightout [-1 1])) (ccoerce (righthome [-1 1])) (ccoerce (rightin [-1 1]))
+                (ccoerce (rightout [-2 1])) (ccoerce (righthome [-2 1])) (ccoerce (rightin [-2 1]))
                 \space (ccoerce (leftdown  [-2 1])) \space
                 \space (ccoerce (leftdown  [-1 1])) \space
                 \space (ccoerce (leftdown  [0  1])) \space
@@ -98,9 +98,9 @@
                 (ccoerce (leftin [-2 0])) (ccoerce (lefthome [-2 0])) (ccoerce (leftout [-2 0]))
                 (ccoerce (leftin [-1 0])) (ccoerce (lefthome [-1 0])) (ccoerce (leftout [-1 0]))
                 (ccoerce (leftin [0  0])) (ccoerce (lefthome [0  0])) (ccoerce (leftout [0  0]))
-                (ccoerce (rightin [0  0])) (ccoerce (righthome [0  0])) (ccoerce (rightout [0  0]))
-                (ccoerce (rightin [-1 0])) (ccoerce (righthome [-1 0])) (ccoerce (rightout [-1 0]))
-                (ccoerce (rightin [-2 0])) (ccoerce (righthome [-2 0])) (ccoerce (rightout [-2 0]))
+                (ccoerce (rightout [0  0])) (ccoerce (righthome [0  0])) (ccoerce (rightin [0  0]))
+                (ccoerce (rightout [-1 0])) (ccoerce (righthome [-1 0])) (ccoerce (rightin [-1 0]))
+                (ccoerce (rightout [-2 0])) (ccoerce (righthome [-2 0])) (ccoerce (rightin [-2 0]))
                 \space (ccoerce (leftdown  [-2 0])) \space
                 \space (ccoerce (leftdown  [-1 0])) \space
                 \space (ccoerce (leftdown  [0  0])) \space
@@ -117,9 +117,9 @@
                 (ccoerce (leftin [-2 -1])) (ccoerce (lefthome [-2 -1])) (ccoerce (leftout [-2 -1]))
                 (ccoerce (leftin [-1 -1])) (ccoerce (lefthome [-1 -1])) (ccoerce (leftout [-1 -1]))
                 (ccoerce (leftin [0  -1])) (ccoerce (lefthome [0  -1])) (ccoerce (leftout [0  -1]))
-                (ccoerce (rightin [0  -1])) (ccoerce (righthome [0  -1])) (ccoerce (rightout [0  -1]))
-                (ccoerce (rightin [-1 -1])) (ccoerce (righthome [-1 -1])) (ccoerce (rightout [-1 -1]))
-                (ccoerce (rightin [-2 -1])) (ccoerce (righthome [-2 -1])) (ccoerce (rightout [-2 -1]))
+                (ccoerce (rightout [0  -1])) (ccoerce (righthome [0  -1])) (ccoerce (rightin [0  -1]))
+                (ccoerce (rightout [-1 -1])) (ccoerce (righthome [-1 -1])) (ccoerce (rightin [-1 -1]))
+                (ccoerce (rightout [-2 -1])) (ccoerce (righthome [-2 -1])) (ccoerce (rightin [-2 -1]))
                 \space (ccoerce (leftdown  [-2 -1])) \space
                 \space (ccoerce (leftdown  [-1 -1])) \space
                 \space (ccoerce (leftdown  [0  -1])) \space
