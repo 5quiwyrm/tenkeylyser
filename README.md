@@ -12,7 +12,9 @@ For those wishing to contribute to tenkeylyser:
 ## Installation
 
 Clone the git repo:
+
 Users: `git clone https://github.com/5quiwyrm/tenkeylyser --depth 1`
+
 Developers: `git clone https://github.com/5quiwyrm/tenkeylyser`
 
 ## Usage
