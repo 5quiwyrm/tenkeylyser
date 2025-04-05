@@ -19,6 +19,11 @@ and the REPL version will give you full control on the tool.
 
 For more documentation read files in `doc`.
 
+## Contributing
+
+This is a small project for me to learn Clojure, so I will not be maintaining this code.
+This also means that I will not respond to any pull requests to merge them -- if you wish to make changes, you are free to fork this code.
+
 ## License
 
 Copyright © 2025 5quidwyrm
