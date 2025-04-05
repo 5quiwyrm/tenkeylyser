@@ -2,15 +2,20 @@
 
 Keyboard analyser for tenkey layouts.
 
+## Requirements:
+
+- Git
+- JVM (Java Virtual Machine)
+For those wishing to contribute to tenkeylyser:
+- Leiningen
+
 ## Installation
 
-Not yet ready for installation.
+Clone the git repo:
+Users: `git clone https://github.com/5quiwyrm/tenkeylyser --depth 1`
+Developers: `git clone https://github.com/5quiwyrm/tenkeylyser`
 
 ## Usage
-
-Requirements:
-- CLI version -> JVM installed
-- REPL version -> Leiningen installed
 
 This tool will be usable in the REPL or as a CLI tool.
 The REPL version will be for people willing to read documentation and use Clojure.
