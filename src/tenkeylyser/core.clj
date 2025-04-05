@@ -12,14 +12,25 @@
 
 (defn rl [] (rpl/refresh))
 
+(def helpmsg
+  (slurp "./src/tenkeylyser/helpmsg.txt"))
+
 (defn -main
   "MAIN FUNCTION"
   [& args]
-  (if (< 1 (count args))
-    (let [layoutname (first args)
-          corpusname (second args)
-          layout (rw/readlayout layoutname)
-          corpus (rw/readdata corpusname)]
-      (op/printlayoutstats layout corpus))
-    (throw (Exception. "Please provide a layout and a corpus!"))))
+  (case (first args)
+    "view"
+      (if (< 2 (count args))
+        (let [layoutname (second args)
+              corpusname (second (rest args))
+              layout (rw/readlayout layoutname)
+              corpus (rw/readdata corpusname)]
+          (op/printlayoutstats layout corpus))
+        (throw (Exception. "Please provide a layout and a corpus!")))
+    "gendata"
+      (if (< 1 (count args))
+        (let [corpusname (second args)]
+          (-> corpusname (gd/parsecorpus) (rw/writedata)))
+        (throw (Exception. "Please provide a corpus name!")))
+    (println helpmsg)))
 

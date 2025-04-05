@@ -1,0 +1,22 @@
+Welcome to tenkeylyser!
+Run with "tenkeylyser [args]":
+
+Actions:
+- view -> Views layout.
+  Accepts two argumnets:
+    - Layout name
+    - Corpus name
+    Example:
+    > tenkeylyser view hyper e200
+    This views the layout hyper with corpus of e200.
+- gendata -> Generates data for a corpus, saving it to a file.
+  Accepts 1 argument:
+    - Corpus name
+    Example:
+    > tenkeylyser gendata mr
+    This scans the corpora folder for files named mr.txt,
+    and generates data for it, then saves it to the
+    data folder.
+
+Running with nothing, or any number of arguments that are not
+"view" or "gendata" will print this help message.
