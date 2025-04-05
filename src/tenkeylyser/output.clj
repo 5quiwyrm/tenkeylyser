@@ -53,8 +53,8 @@
         rightdown (filterlocs right down)
         rightin   (filterlocs right in)
         rightout  (filterlocs right out)]
-    (do (printf "Layout: %s\n" (viewlayout :name))
-        (printf "
+    (do (println (format "Layout: %s" (viewlayout :name)))
+        (println (format "
 -------------------------   -------------------------
 | %c %c %c | %c %c %c | %c %c %c |   | %c %c %c | %c %c %c | %c %c %c |
 | %c %c %c | %c %c %c | %c %c %c |   | %c %c %c | %c %c %c | %c %c %c |
@@ -68,7 +68,6 @@
 | %c %c %c | %c %c %c | %c %c %c |   | %c %c %c | %c %c %c | %c %c %c |
 | %c %c %c | %c %c %c | %c %c %c |   | %c %c %c | %c %c %c | %c %c %c |
 -------------------------   -------------------------
-
 "
                 \space (ccoerce (leftup  [-2 1])) \space
                 \space (ccoerce (leftup  [-1 1])) \space
@@ -125,21 +124,21 @@
                 \space (ccoerce (leftdown  [0  -1])) \space
                 \space (ccoerce (rightdown [0  -1])) \space
                 \space (ccoerce (rightdown [-1 -1])) \space
-                \space (ccoerce (rightdown [-2 -1])) \space)))
+                \space (ccoerce (rightdown [-2 -1])) \space))))
   (let [d    data
         thms (cs/totalhmscore  viewlayout data)
         tdst (cs/totaldist     viewlayout data)
         talt (cs/totalalt      viewlayout data)
         tswt (cs/totalswipetap viewlayout data)
         trt  (cs/totalrepswipe viewlayout data)]
-    (printf "Corpus: %s\n" (d :name))
-    (printf "--------------------------------------------\n")
-    (->> thms                              (format "Total heat map score:   %.2f")   (printf "| %-40s |\n"))
-    (->> (d :count) (/ thms)               (format "Average heat map score: %.2f")   (printf "| %-40s |\n"))
-    (->> tdst                              (format "Total distance score:   %.2f")   (printf "| %-40s |\n"))
-    (->> (d :count) (dec) (/ talt)         (format "Average distance score: %.2f")   (printf "| %-40s |\n"))
-    (->> (d :count) (dec) (/ talt) (* 100) (format "Alt percentage:         %.2f%%") (printf "| %-40s |\n"))
-    (->> (d :count) (dec) (/ tswt) (* 100) (format "Swipe-tap / Tap-swipe:  %.2f%%") (printf "| %-40s |\n"))
-    (->> (d :count) (dec) (/ trt)  (* 100) (format "Repeated swipes:        %.2f%%") (printf "| %-40s |\n"))
-    (printf "--------------------------------------------\n")))
+    (println (format "Corpus: %s" (d :name)))
+    (println (format "--------------------------------------------"))
+    (->> thms                              (format "Total heat map score:   %.2f")   (format "| %-40s |") (println))
+    (->> (d :count) (/ thms)               (format "Average heat map score: %.2f")   (format "| %-40s |") (println))
+    (->> tdst                              (format "Total distance score:   %.2f")   (format "| %-40s |") (println))
+    (->> (d :count) (dec) (/ talt)         (format "Average distance score: %.2f")   (format "| %-40s |") (println))
+    (->> (d :count) (dec) (/ talt) (* 100) (format "Alt percentage:         %.2f%%") (format "| %-40s |") (println))
+    (->> (d :count) (dec) (/ tswt) (* 100) (format "Swipe-tap / Tap-swipe:  %.2f%%") (format "| %-40s |") (println))
+    (->> (d :count) (dec) (/ trt)  (* 100) (format "Repeated swipes:        %.2f%%") (format "| %-40s |") (println))
+    (println (format "--------------------------------------------"))))
 
