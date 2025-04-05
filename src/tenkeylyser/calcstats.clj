@@ -13,7 +13,9 @@
   (let [hm cu/heatmap
         locs (lt/getloc character layout)]
     (reduce +
-            (for [l locs] (hm l)))))
+            (for [l locs]
+              (let [score (hm l)]
+                (if (nil? score) 0 score))))))
 
 (defn totalhmscore [viewlayout data]
   (assert (not (nil? (data :monograms))))
