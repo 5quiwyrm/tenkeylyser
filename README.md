@@ -30,6 +30,9 @@ and the REPL version will give you full control on the tool.
 
 For more documentation read files in `doc`.
 
+Windows Powershell: `./tenkeylyser <args>`
+Bash: `./tenkeylyser.sh <args>`
+
 ## Contributing
 
 This is a small project for me to learn Clojure, so I will not be maintaining this code.
