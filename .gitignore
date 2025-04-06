@@ -9,9 +9,6 @@ pom.xml.asc
 /.prepl-port
 .hgignore
 .hg/
-corpora/
-data/
-layouts/
 .clj-kondo/
 .lsp/
 .lein-repl-history
