@@ -6,6 +6,7 @@ Keyboard analyser for tenkey layouts.
 
 - Git
 - JVM (Java Virtual Machine)
+
 For those wishing to contribute to tenkeylyser:
 - Leiningen
 
